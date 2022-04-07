@@ -6,6 +6,7 @@ def cosine(matrix):
     numer = matrix @ matrix.T # get the numberator dot product of u and v
     #print(numer)
     denom = lg.norm(matrix) * lg.norm(matrix.T)
+    #denom = 2*lg.norm(matrix)
     out = numer/denom
     print(out)
     return out
