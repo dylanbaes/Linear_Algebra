@@ -25,15 +25,13 @@ print(x)
 L = computeL(u,v)
 
 # A) Generate a random x-axis vector in the range -1,1 with 100 points
-x_vals = np.linspace(-1,1, num=100)
+x_vals = np.linspace(-1,1, num=100) #x[i] = || u - v ||
 
 # given that the x_vals is the |u-v| vector, find the L1 and L2 and set them to y1 and y2 respectively
-y1 = np.sum(x_vals)
-y2 = lg.norm(x_vals) ** 2
-y_1 = np.full((100,1), y1)
-y_2 = np.full((100,1), y2)
+y1 = np.abs(x_vals)
+y2 = x_vals ** 2
 print(x_vals)
-plt.plot(x_vals, y_1, 'bo', x_vals, y_2, 'go')
+plt.plot(x_vals, y1, 'bo', x_vals, y2, 'go')
 plt.show()
 
 
